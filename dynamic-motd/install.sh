@@ -3,7 +3,7 @@
 # This file requires sudoer access
 # This installation is licensed under MIT, but the original author's files are licensed under GNU General Public License.
 
-sudo apt-get install update-notifier-common figlet
+sudo apt-get install update-notifier-common figlet debian-goodies
 
 sudo mkdir /etc/update-motd.d/
 sudo mv etc/update-motd.d/ /etc/update-motd.d/
