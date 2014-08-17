@@ -1,0 +1,3 @@
+# Rename highmon to highlights. This is a script
+/buffer highmon
+/buffer set short_name highlights
