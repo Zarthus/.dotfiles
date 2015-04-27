@@ -19,7 +19,7 @@ fi
 
 echo "Making required directories, moving requires files and giving them execution rights."
 mkdir -p /etc/update-motd.d/
-sudo mv etc/update-motd.d/ /etc/update-motd.d/
+sudo mv etc/ /etc/update-motd.d/
 sudo chmod +x /etc/update-motd.d/*
 
 echo "Symlink created"
