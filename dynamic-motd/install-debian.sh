@@ -11,7 +11,7 @@ sudo cp /etc/motd ~/backup-motd
 
 echo "Creating /etc/update-motd.d/, moving required files and giving them execution rights."
 sudo mkdir /etc/update-motd.d/
-sudo mv etc/update-motd.d/ /etc/update-motd.d/
+sudo mv etc/* /etc/update-motd.d/
 sudo chmod +x /etc/update-motd.d/*
 sudo rm /etc/motd
 
