@@ -1,0 +1,17 @@
+total 60
+drwxr-xr-x 15 zarthus zarthus 4096 Sep 20 22:14 .
+drwxr-xr-x  6 zarthus zarthus 4096 Sep 20 22:05 ..
+drwxr-xr-x  4 zarthus zarthus 4096 Sep 20 22:05 closetag.vim
+drwxr-xr-x  6 zarthus zarthus 4096 Sep 20 22:05 cosco.vim
+drwxr-xr-x  7 zarthus zarthus 4096 Sep 20 22:05 delimitMate
+drwxr-xr-x  5 zarthus zarthus 4096 Sep 20 22:05 nerdcommenter
+drwxr-xr-x  9 zarthus zarthus 4096 Sep 20 22:05 nerdtree
+drwxr-xr-x  6 zarthus zarthus 4096 Sep 20 22:05 supertab
+drwxr-xr-x  8 zarthus zarthus 4096 Sep 20 22:05 syntastic
+drwxr-xr-x  5 zarthus zarthus 4096 Sep 20 22:05 taglist.vim
+drwxr-xr-x  5 zarthus zarthus 4096 Sep 20 22:05 vim-autoformat
+drwxr-xr-x  5 zarthus zarthus 4096 Sep 20 22:05 vim-fugitive
+-rw-r--r--  1 zarthus zarthus    0 Sep 20 22:14 vim-plugins
+drwxr-xr-x 12 zarthus zarthus 4096 Sep 20 22:05 vim-ruby
+drwxr-xr-x  4 zarthus zarthus 4096 Sep 20 22:05 vim-sensible
+drwxr-xr-x  5 zarthus zarthus 4096 Sep 20 22:05 vim-surround
