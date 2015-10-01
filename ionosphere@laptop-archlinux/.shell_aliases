@@ -16,6 +16,10 @@ function link-dotfiles()
 		fi
 }
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> bd33da9d11e18593d9e29b1dcb00671239835f85
 # SSH
 alias amberline="ssh amberline"
 
