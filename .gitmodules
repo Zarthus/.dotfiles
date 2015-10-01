@@ -1,0 +1,3 @@
+[submodule "ionosphere@laptop-archlinux/oh-my-zsh"]
+	path = ionosphere@laptop-archlinux/oh-my-zsh
+	url = https://github.com/robbyrussell/oh-my-zsh/
