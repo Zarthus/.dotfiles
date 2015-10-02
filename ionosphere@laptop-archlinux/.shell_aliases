@@ -15,11 +15,11 @@ function link-dotfiles()
 				rsync -avr $1 $root_dir
 		fi
 }
+# Pacman
+alias aura-install="sudo aura -A"
+alias pacman-install="sudo pacman -S"
+alias pacman-upgrade="sudo pacman -Syu"
 
-<<<<<<< HEAD
-=======
-
->>>>>>> bd33da9d11e18593d9e29b1dcb00671239835f85
 # SSH
 alias amberline="ssh amberline"
 
