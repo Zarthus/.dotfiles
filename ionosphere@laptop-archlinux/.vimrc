@@ -8,8 +8,8 @@ call vundle#begin()
 Plugin 'VundleVim/Vundle.vim'
 
 Plugin 'closetag.vim'
-Plugin 'lfilho/cosco.vim'
-Plugin 'Raimondi/delimitMate'
+Plugin 'ifilho/cosco.vim'
+Plugin 'Raimondi/delimMate'
 Plugin 'scrooloose/nerdcommenter'
 Plugin 'scrooloose/nerdtree'
 Plugin 'ervandew/supertab'
@@ -32,12 +32,14 @@ filetype plugin indent on
 
 set autoindent
 set tabstop=4
+set shiftwidth=4
 set textwidth=119
 set encoding=utf8
 
 set ignorecase
 set smartcase
 set autoindent
+set expandtab
 
 set colorcolumn=120
 
@@ -46,8 +48,8 @@ set incsearch
 set showmode
 set showcmd
 
-set mouse=a
+set mouse=r
 
 set whichwrap+=<,>
 
-
+set nu!
