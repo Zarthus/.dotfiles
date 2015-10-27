@@ -8,8 +8,8 @@ call vundle#begin()
 Plugin 'VundleVim/Vundle.vim'
 
 Plugin 'closetag.vim'
-Plugin 'ifilho/cosco.vim'
-Plugin 'Raimondi/delimMate'
+Plugin 'lfilho/cosco.vim'
+Plugin 'Raimondi/delimitMate'
 Plugin 'scrooloose/nerdcommenter'
 Plugin 'scrooloose/nerdtree'
 Plugin 'ervandew/supertab'
