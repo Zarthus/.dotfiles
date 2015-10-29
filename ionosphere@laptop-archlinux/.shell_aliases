@@ -30,3 +30,6 @@ alias gl="git log --graph --date-order --decorate --format=format:'%C(bold red)%
 
 # util
 alias week="date +%V"
+alias tabconvert="find . -type f -exec sed -i.orig 's/\t/    /g' {} +"
+alias tts="tabconvert"
+alias ttsnb="tabconvert && rm *.orig"
