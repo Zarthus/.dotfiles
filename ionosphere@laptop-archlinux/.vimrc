@@ -45,6 +45,9 @@ set colorcolumn=120
 
 set incsearch
 
+set lcs=tab:··,trail:░,nbsp:%
+set list
+
 set showmode
 set showcmd
 
