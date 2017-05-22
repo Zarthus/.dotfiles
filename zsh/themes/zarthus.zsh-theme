@@ -31,12 +31,12 @@ function get_right_prompt() {
 }
 
 # Potentially add '@%m' to L33 for machine name
-PROMPT="
+PROMPT='
 %{$fg_no_bold[$USERCOLOR]%}%n\
  %{$fg_no_bold[white]%}%3~\
  $(check_git_prompt_info)\
 $USYMBCOL\
- %{$reset_color%}"
+ %{$reset_color%}'
 
 RPROMPT='$(get_right_prompt)'
 
