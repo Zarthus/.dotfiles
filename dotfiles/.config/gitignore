@@ -1,0 +1,5 @@
+.idea
+
+build/build.properties.dist
+build/build.properties.docker.dist
+build/build.properties.test.dist
