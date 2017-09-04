@@ -1,0 +1,6 @@
+# A version for servers
+.vim
+.vimrc
+
+.gitconfig
+.config/gitignore

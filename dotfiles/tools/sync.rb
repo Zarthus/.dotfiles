@@ -7,6 +7,7 @@ require 'fileutils'
 
 TOOLS_DIR = File.dirname(__FILE__)
 SYNCMAP = TOOLS_DIR + "/.syncmap"
+SYNCMAP_SERVER = TOOLS_DIR + "/.syncmap-server"
 directive = :none
 
 HOME_DIR = ENV.fetch('HOME', '/home/' + ENV.fetch('USER', 'E_INVALID_USER'))
@@ -31,7 +32,7 @@ class Sync
     end
 
     def usage
-        "Usage: app.rb <directive> :: e.g. app.rb machine"
+        "Usage: app.rb <directive> :: e.g. app.rb machine\n  Append '-server' after the directive to load the syncmap for servers"
     end
 
     def sync(to_path, from_path)
@@ -93,8 +94,6 @@ class Sync
     end
 end
 
-sync = Sync.new(SYNCMAP, &method(:puts))
-
 directive = ARGV.first
 
 if directive.nil?
@@ -103,7 +102,16 @@ if directive.nil?
     raise 'Directive cannot be nil.'
 end
 
+if directive.end_with? '-server'
+    server = true
+    directive = directive.sub(/-server$/, '')
+else
+    server = false
+end
+
 directive = directive.to_sym
+
+sync = Sync.new(server ? SYNCMAP_SERVER : SYNCMAP, &method(:puts))
 
 if directive == :machine
     sync.sync(HOME_DIR, PROJ_DIR)
