@@ -21,6 +21,7 @@ Plugin 'vim-ruby/vim-ruby'
 Plugin 'tpope/vim-sensible'
 Plugin 'tpope/vim-surround'
 Plugin 'StanAngeloff/php.vim'
+Plugin 'airblade/vim-gitgutter'
 
 call vundle#end()
 " ###
