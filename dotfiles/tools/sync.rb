@@ -15,6 +15,12 @@ PROJ_DIR = TOOLS_DIR + '/..'
 raise "Home dir #{HOME_DIR} does not exist" unless Dir.exist? HOME_DIR
 raise "Project dir #{PROJECT_DIR} does not exist" unless Dir.exist? PROJ_DIR
 
+class Dir
+    def self.back(path, levels = 1)
+        path.split(File::SEPARATOR)[0..-(levels + 1)].join(File::SEPARATOR)
+    end
+end
+
 class Sync
     def initialize(syncmap, &logger)
         raise "Syncmap #{syncmap} does not exists" unless File.exist? syncmap
@@ -41,12 +47,7 @@ class Sync
             if !File.exist?(full_to_path) && !Dir.exist?(full_to_path)
                 log " [!] warning: Path to_path #{full_to_path} does not exist, will be created"
 
-                FileUtils.mkdir_p(full_to_path)
-
-                # It's a file, not a directory. rmdir the last entry
-                if !File.directory?(full_from_path)
-                    Dir.rmdir(full_to_path)
-                end
+                FileUtils.mkdir_p(Dir.back(full_to_path, 1))
             end
 
             if !File.exist?(full_from_path) && !Dir.exist?(full_from_path)
