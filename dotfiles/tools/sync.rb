@@ -57,7 +57,7 @@ class Sync
             end
 
             begin
-                FileUtils.cp_r(full_from_path, full_to_path)
+                FileUtils.cp_r(full_from_path, Dir.back(full_to_path, 1))
             rescue => e
                log " [!] error: failed to copy #{full_from_path} to #{full_to_path}"
                log " [!] cause: #{e.to_s}"
