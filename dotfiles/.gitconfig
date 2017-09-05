@@ -1,7 +1,6 @@
 [user]
     name = Jos Ahrens
 #   email = fixme
-#   signingkey = 1ACB83AF6B3A7208
 
 [color]
     diff        = auto
@@ -38,16 +37,12 @@
     dc = diff --cached
     amend = commit --amend
 
-    branches = branch -a
-    remotes = remote -v
-    tags = !sh -c 'git tag | sort -V'
-
-    l = log --pretty=oneline --graph --abbrev-commit
     log-full = log --decorate --stat --graph --pretty=format:\"%d %Cgreen%h%Creset (%ar - %Cred%an%Creset), %s%n\"
     serve = daemon --reuseaddr --verbose  --base-path=. --export-all ./.git
     whois = "!sh -c 'git log -i -1 --pretty=\"format:%an <%ae>\n\" --author=\"$1\"' -"
     whatis = show -s --pretty='tformat:%h (%s, %ad)' --date=short
     changelog = !sh -c 'git log --pretty=format:\"* %h %B\" $1..HEAD | sort -k 3' -
+    tags = !sh -c 'git tag | sort -V'
     t = tag -l
     a = add -A .
     l = log

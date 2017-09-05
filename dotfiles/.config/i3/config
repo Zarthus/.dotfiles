@@ -155,9 +155,9 @@ bindsym $mod+r mode "resize"
 
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)
-bar {
-        status_command i3blocks
-}
+# bar {
+#        status_command i3blocks
+#}
 
 ### Custom
 # Pulse Audio controls
@@ -189,6 +189,7 @@ exec --no-startup-id xautolock -locker "i3lock -I 15 -c 333333 -e -f" -time 30
 exec --no-startup-id dunst
 exec --no-startup-id /home/jahrens/Software/Dropbox/dropboxd
 exec --no-startup-id bash /home/jahrens/.setup/work.sh
+exec --no-startup-id $HOME/.config/polybar/launch.sh
 
 exec --no-startup-id i3-msg 'workspace 1; exec gnome-terminal'
 exec --no-startup-id i3-msg 'rename workspace 2 to 7'

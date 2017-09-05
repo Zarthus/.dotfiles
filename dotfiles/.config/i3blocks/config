@@ -43,11 +43,11 @@ interval=1
 # See the script for details.
 [volume]
 label=VOL
-#label=♪
+full_text=♪
 instance=Master
 #instance=PCM
-interval=once
-signal=10
+interval=600
+signal=1
 
 # Memory usage
 #
@@ -79,13 +79,13 @@ interval=300
 # The address can be forced to IPv4 or IPv6 with -4 or -6 switches.
 [iface]
 instance=enp0s31f6
-label=IP
+label=E:
 color=#00FF00
 interval=60
 separator=true
 
-[wifi]
-label=WLAN
+[iface]
+label=W:
 instance=wlp3s0
 interval=120
 separator=true
