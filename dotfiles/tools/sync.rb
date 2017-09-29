@@ -97,7 +97,7 @@ end
 directive = ARGV.first
 
 if directive.nil?
-    puts sync.usage
+    puts Sync.new(SYNCMAP_SERVER, &method(:puts)).usage
 
     raise 'Directive cannot be nil.'
 end
