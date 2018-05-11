@@ -1,6 +1,0 @@
-[submodule "ionosphere@laptop-archlinux/oh-my-zsh"]
-	path = ionosphere@laptop-archlinux/oh-my-zsh
-	url = https://github.com/robbyrussell/oh-my-zsh/
-[submodule "ionosphere@laptop-archlinux/.vim/bundle/Vundle.vim"]
-	path = ionosphere@laptop-archlinux/.vim/bundle/Vundle.vim
-	url = https://github.com/VundleVim/Vundle.vim
