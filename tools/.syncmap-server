@@ -1,6 +1,7 @@
 # A version for servers
 .vim
 .vimrc
-
+.nanorc
 .gitconfig
+
 .config/gitignore

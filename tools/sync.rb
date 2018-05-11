@@ -11,7 +11,7 @@ SYNCMAP_SERVER = TOOLS_DIR + "/.syncmap-server"
 directive = :none
 
 HOME_DIR = ENV.fetch('HOME', '/home/' + ENV.fetch('USER', 'E_INVALID_USER'))
-PROJ_DIR = TOOLS_DIR + '/..'
+PROJ_DIR = TOOLS_DIR + '/../dotfiles'
 
 raise "Home dir #{HOME_DIR} does not exist" unless Dir.exist? HOME_DIR
 raise "Project dir #{PROJECT_DIR} does not exist" unless Dir.exist? PROJ_DIR
