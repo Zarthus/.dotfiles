@@ -1,0 +1,12 @@
+.check-dependency-sudo:
+	@command -v sudo > /dev/null
+
+.install-dependencies: .check-dependency-sudo
+	@sudo dnf install ruby php git zsh
+
+.install-tools:
+	## Might have to enable a third-party repositoriy. Haven't checked.
+	@sudo dnf install exa
+
+install: .install-dependencies
+	@echo 1
