@@ -4,9 +4,9 @@
 .install-dependencies: .check-dependency-sudo
 	@sudo dnf install ruby php git zsh
 
-.install-tools:
+install-tools:
 	## Might have to enable a third-party repositoriy. Haven't checked.
-	@sudo dnf install exa
+	@sudo dnf install exa jq tmux
 
 install: .install-dependencies
 	@echo 1

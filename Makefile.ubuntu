@@ -4,8 +4,8 @@
 .install-dependencies: .check-dependency-sudo
 	@sudo apt install ruby php git zsh -y
 
-.install-tools:
-	@echo 1
+install-tools:
+	@sudo apt install jq tmux -y
 
 install: .install-dependencies
 	@echo 1

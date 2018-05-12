@@ -9,3 +9,4 @@
 .config/rofi
 .config/gitignore
 .config/phpcs.ruleset.xml
+.config/shell_aliases.sh
