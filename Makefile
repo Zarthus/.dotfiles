@@ -27,7 +27,7 @@ ifeq (${OS},unknown)
 	$(error No valid OS found)
 endif
 
-install: .check-operating-system .install-os-generic install-oh-my-zsh install-vundle-vim install-dotfiles install-dotfiles-zsh-theme install-dotfiles-shell-aliases configure-git ## Install everything (detects system)
+install: .check-operating-system .install-os-generic install-oh-my-zsh install-vundle-vim install-dotfiles install-dotfiles-zsh-theme install-dotfiles-shell-aliases install-dotfiles-environment configure-git ## Install everything (detects system)
 	# Installed for OS: ${OS}
 	# All done. Consider the following actions:
 	# - Generate GPG key (and use it with git)
@@ -56,6 +56,7 @@ clean:  ## Clean up the installation from your system (not implemented)
 
 configure-home:  ## Set up the $HOME folder
 	@mkdir ~/.config || true
+	@mkdir -p ~/.local/bin || true
 
 configure-git:  ## Prompt the user for user.name, user.email if empty
 ifeq ($(shell git config --global user.name),)
@@ -87,6 +88,10 @@ install-dotfiles-zsh-theme: .check-dependency-ohmyzsh  ## Install the OhMyZsh cu
 install-dotfiles-shell-aliases: .check-dependency-ohmyzsh  ## Source .config/shell_aliases.sh in .zshrc
 	@[[ 0 -eq $(shell grep 'shell_aliases.sh' ${HOME}/.zshrc | wc -l) ]] && \
 		echo -e "\nsource ${HOME}/.config/shell_aliases.sh\n" >> ${HOME}/.zshrc || true
+
+install-dotfiles-environment: .check-dependency-ohmyzsh  ## Source .config/environment in .zshrc
+	@[[ 0 -eq $(shell grep '.config/environment' ${HOME}/.zshrc | wc -l) ]] && \
+		echo -e "source ${HOME}/.config/environment\n" >> ${HOME}/.zshrc || true
 
 help:  ## This very help command
 	# Valid make targets:
