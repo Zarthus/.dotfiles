@@ -70,7 +70,7 @@ endif
 	@git config --global user.email || true
 
 install-oh-my-zsh: .check-dependency-git .change-shell-to-zsh  ## Install oh-my-zsh
-	@curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh | sed -E 's/\s+chsh/#chsh/' | sh
+	@curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh | sh
 
 install-vundle-vim: .check-dependency-git  ## Install Vundle.vim in dotfiles/.vim/bundle
 	@mkdir -p dotfiles/.vim/bundle
