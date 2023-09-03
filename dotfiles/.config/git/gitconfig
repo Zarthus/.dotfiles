@@ -35,7 +35,6 @@
     tags = tag -l
     remotes = remote -v
 
-    log-full = log --decorate --stat --graph --pretty=format:\"%d %Cgreen%h%Creset (%ar - %Cred%an%Creset), %s%n\"
     serve = daemon --reuseaddr --verbose  --base-path=. --export-all ./.git
     whois = "!sh -c 'git log -i -1 --pretty=\"format:%an <%ae>\n\" --author=\"$1\"' -"
     whatis = show -s --pretty='tformat:%h (%s, %ad)' --date=short
@@ -43,7 +42,6 @@
     t = tag -l
     a = add -A .
     l = log
-    dsf = "!f() { [ -z \"$GIT_PREFIX\" ] || cd \"$GIT_PREFIX\" && git diff --color \"$@\" | diff-so-fancy  | less --tabs=4 -RFX; }; f"
 
     please = push --force-with-lease
 

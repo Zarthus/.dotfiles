@@ -1,8 +1,0 @@
-# A version for servers
-.vim
-.vimrc
-.nanorc
-.gitconfig
-
-.config/shell_aliases.sh
-.config/gitignore

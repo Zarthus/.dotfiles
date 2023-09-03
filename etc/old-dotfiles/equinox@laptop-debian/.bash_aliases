@@ -1,6 +1,0 @@
-alias amberline="ssh zarthus@amberline.zarth.us -p 7922 -i /home/zarthus/.ssh/amberline"
-alias gitdir="cd ~/Software/git"
-alias school="cd ~/Software/git/School"
-alias software="cd ~/Software/git/Personal"
-alias hackaton="cd ~/Software/git/Personal/Hackaton-Core"
-alias hackssh="ssh novaember.com"
