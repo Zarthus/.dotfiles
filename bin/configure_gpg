@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+
+set -e
+
+gpg --full-generate-key
+
+gpg --list-secret-keys --keyid-format=long

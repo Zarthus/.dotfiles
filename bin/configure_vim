@@ -1,0 +1,19 @@
+#!/usr/bin/env bash
+
+set -e
+
+if [[ $(command -v nvim) != "" ]]; then
+    if [[ ! -e ~/.config/nvim/bundle/Vundle.vim ]]; then
+        git clone https://github.com/VundleVim/Vundle.vim.git ~/.config/nvim/bundle/Vundle.vim
+    fi
+    cp -r .vim/colors/ ~/.config/nvim/colors/
+    cp -r .vimrc ~/.config/nvim/init.vim
+    nvim -c PluginInstall -c qa!
+else
+    cp -r .vim $HOME/.vim/
+    if [[ ! -e ~/.vim/bundle/Vundle.vim ]]; then
+        git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
+    fi
+    vim -c PluginInstall -c qa!
+fi
+

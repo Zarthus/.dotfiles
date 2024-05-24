@@ -1,0 +1,43 @@
+[user]
+    name = Jos Ahrens
+    email = git@liefland.net
+    signingkey = GPG_KEY_ID
+
+[color]
+    diff        = auto
+    status      = auto
+    branch      = auto
+    interactive = auto
+    ui          = true
+    pager       = true
+
+[format]
+    pretty = "%nCommit:  %C(bold white)%H%nRefs:   %C(cyan bold)%d%nDate:    (%C(red)%ar%Creset) %ai%nAuthor:  %C(yellow)%aN <%aE>%nSubject: %C(green)%B"
+
+[log]
+    decorate = full
+
+[core]
+    pager        = delta
+    excludesfile = ~/.config/git/ignore
+
+[branch]
+    autosetuprebase = always
+
+[push]
+    default = simple
+
+[alias]
+    s = status
+    amend = commit --amend
+    tags = tag -l
+    remotes = remote -v
+
+    please = push --force-with-lease
+    pup = push --set-upstream origin HEAD
+
+[init]
+    defaultBranch = main
+
+[commit]
+    gpgsign = true

@@ -1,0 +1,6 @@
+#!/usr/bin/env bash
+
+set -e
+
+rm .zshrc
+rm .config/git/config

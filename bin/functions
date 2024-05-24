@@ -1,0 +1,12 @@
+#!/usr/bin/env bash
+
+set -e
+
+function do_inline_replace {
+    # account for gnused
+    if [[ `uname` == "Linux" ]]; then
+        sed -i $@
+    else
+        sed -i '' $@
+    fi
+}

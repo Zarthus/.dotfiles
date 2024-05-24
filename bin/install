@@ -1,0 +1,46 @@
+#!/usr/bin/env bash
+
+set -xe
+
+bin/validate
+
+if [[ ! $SHELL =~ zsh ]]; then
+    chsh -s $(which zsh)
+fi
+
+bin/configure_dirs
+
+# Is this cheating? Probably.
+Z_GPG_KEYID=$(gpg --list-secret-keys --keyid-format=long | grep -P -o 'sec.*\/\K[^ ]+' | head -1)
+if [[ "$Z_GPG_KEYID" == "" ]]; then
+    echo "No GPG key found. Generating one..."
+    bin/configure_gpg
+fi
+Z_GPG_KEYID=$(gpg --list-secret-keys --keyid-format=long | grep -P -o 'sec.*\/\K[^ ]+' | head -1)
+Z_GPG_PUBKEY=$(gpg --armor --export $Z_GPG_KEYID)
+
+bin/build_gitconfig "$Z_GPG_KEYID"
+
+bin/deps_php || true
+bin/deps_vim || true
+bin/install_rustup || true
+bin/deps_cargo || true
+bin/configure_vim || true
+
+bin/preload_zsh
+bin/build_zshrc
+
+set +x
+
+echo "$Z_GPG_KEYID" >> ~/.config/env/GPG_KEY_ID
+echo "GPG Public Key ($Z_GPG_KEYID)"
+echo "$Z_GPG_PUBKEY"
+
+cp -v .zshrc $HOME
+cp -vr .config $HOME
+
+echo "======================"
+echo "Installation finished!"
+echo "======================"
+echo "Restart your shell session and apply any leftover configurations"
+

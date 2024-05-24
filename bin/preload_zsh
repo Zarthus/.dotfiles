@@ -1,0 +1,33 @@
+#!/usr/bin/env zsh
+
+set -ex
+
+# Set the directory we want to store zinit and plugins
+export ZINIT_HOME="${XDG_DATA_HOME:-${HOME}/.local/share}/zinit/zinit.git"
+
+# Download Zinit, if it's not there yet
+if [ ! -d "$ZINIT_HOME" ]; then
+   mkdir -p "$(dirname $ZINIT_HOME)"
+   git clone https://github.com/zdharma-continuum/zinit.git "$ZINIT_HOME"
+fi
+
+set +xe
+
+if [[ ! $(command -v zinit) ]]; then
+   source "$ZINIT_HOME/zinit.zsh" || true
+fi
+
+zinit light romkatv/powerlevel10k
+zinit light zsh-users/zsh-syntax-highlighting
+zinit light zsh-users/zsh-completions
+zinit light zsh-users/zsh-autosuggestions
+zinit light Aloxaf/fzf-tab
+
+zinit snippet OMZP::git
+zinit snippet OMZP::sudo
+zinit snippet OMZP::gpg-agent
+zinit snippet OMZP::kubectl
+zinit snippet OMZP::command-not-found
+
+autoload -Uz _zinit
+autoload -Uz compinit && compinit

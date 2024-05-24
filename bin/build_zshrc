@@ -1,0 +1,33 @@
+#!/usr/bin/bash
+
+set -ex
+
+source bin/functions
+
+if [[ -e $HOME/.cargo/env ]]; then
+    source $HOME/.cargo/env
+fi
+
+cp template/zshrc .zshrc
+
+
+function do_replacement {
+    if [[ $(command -v $1) ]]; then
+        do_inline_replace "s/^#$1://g" .zshrc
+    else
+        do_inline_replace "s/^#$1:.*//g" .zshrc
+    fi
+}
+
+do_replacement "apt"
+do_replacement "brew"
+do_replacement "cargo"
+do_replacement "composer"
+do_replacement "dnf"
+do_replacement "eza"
+do_replacement "fzf"
+do_replacement "go"
+do_replacement "nvim"
+do_replacement "rustup"
+do_replacement "snap"
+do_replacement "zoxide"

@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+
+set -e
+
+source bin/functions
+
+cp template/gitconfig .config/git/config
+
+do_inline_replace "s/GPG_KEY_ID/$1/g" .config/git/config

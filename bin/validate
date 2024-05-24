@@ -1,0 +1,50 @@
+#!/usr/bin/env bash
+
+set -e
+
+VERBOSE=$1 || "false"
+validation_errors=0
+
+function is_installed() {
+	if [[ ! $(command -v $1) ]]; then
+		echo "err: missing package '$1'"
+		validation_errors=$(($validation_errors+1))
+	elif [[ "$VERBOSE" == "true" ]]; then
+		echo "package '$1' is installed"
+	fi
+}
+
+function recommend() {
+	if [[ ! $(command -v $1) ]]; then
+		echo "recommend: install '$1'"
+	fi
+}
+
+is_installed "zsh"
+is_installed "git"
+is_installed "gpg"
+
+# TODO: this just always prints, not necessarily bad though
+recommend "nerd font"
+
+recommend "cc"
+recommend "libssl-dev"
+
+recommend "fzf"
+recommend "jq"
+recommend "nvim"
+
+recommend "php"
+recommend "composer"
+
+recommend "cargo"
+recommend "bat"
+recommend "eza"
+recommend "zoxide"
+recommend "rustc"
+
+if [[ $validation_errors -ne 0 || $VERBOSE == "true" ]]; then
+	echo "$validation_errors missing packages"
+fi
+
+exit $validation_errors

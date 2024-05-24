@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+
+if [[ ! $(command -v vim) || ! $(command -v php) ]]; then
+	echo "missing optional package: composer / php"
+	echo "skip install of php deps"
+	exit 1
+fi
+
+composer g require psy/psysh:@stable

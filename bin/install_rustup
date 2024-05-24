@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+
+set -e
+
+if [[ -e $HOME/.cargo/env ]]; then
+    exit 0
+fi
+
+curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
